@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provider Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="provider.js"></script>
+</head>
+<body class="bg-gray-100 h-screen flex flex-row">
+  
+  <!-- Side Navigation -->
+  <div class="w-1/5 bg-green-600 text-black">
+    <nav class="p-6">
+      <ul>
+        <li class="mb-4"><a href="#" class="text-xl font-semibold">Dashboard</a></li>
+        <li class="mb-4"><a href="#" class="text-xl font-semibold">Register Station</a></li>
+        <li class="mb-4"><a href="#" class="text-xl font-semibold">Manage Stations</a></li>
+        <li class="mb-4"><a href="#" class="text-xl font-semibold">Configurations</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="w-4/5 p-10">
+    
+    <!-- Provider Registration Form -->
+    <div class="bg-gray-200 p-6 rounded-lg shadow-md w-full mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Registration</h2>
+      <form id="providerForm" class="space-y-4">
+        <div>
+          <label for="providerName" class="block text-sm font-medium">Provider Name</label>
+          <input type="text" id="providerName" name="providerName" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input type="email" id="email" name="email" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+        </div>
+        <div>
+          <label for="phoneNumber" class="block text-sm font-medium">Phone Number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Enter your phone number">
+        </div>
+        <div>
+          <label for="evVehicleType" class="block text-sm font-medium">EV Vehicle Type</label>
+          <input type="text" id="evVehicleType" name="evVehicleType" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Enter EV vehicle type">
+        </div>
+        <div>
+          <label for="stationLocation" class="block text-sm font-medium">Station Location</label>
+          <input type="text" id="stationLocation" name="stationLocation" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Enter station location">
+        </div>
+        <div>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md">Register</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Station Management Section -->
+    <div class="bg-gray-200 p-6 rounded-lg shadow-md w-full mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Manage Your Stations</h2>
+      <div id="stationsList" class="space-y-4">
+        <!-- Dynamic list of stations will be appended here by JS -->
+      </div>
+    </div>
+
+    <!-- Configuration Section -->
+    <div class="bg-gray-200 p-6 rounded-lg shadow-md w-full">
+      <h2 class="text-2xl font-semibold mb-4">Station Configurations</h2>
+      <div class="space-y-4">
+        <div>
+          <label for="pricingModel" class="block text-sm font-medium">Pricing Model</label>
+          <select id="pricingModel" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+          </select>
+        </div>
+        <div>
+          <label for="availability" class="block text-sm font-medium">Availability</label>
+          <input type="text" id="availability" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Enter availability status">
+        </div>
+        <div>
+          <button id="saveConfig" class="bg-green-600 text-white px-4 py-2 rounded-md">Save Configuration</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
